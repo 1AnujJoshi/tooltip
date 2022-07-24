@@ -1,13 +1,110 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* css for app */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* css for button  */
+.btn {
+  display: flex;
+  top: 50%;
+  width: auto;
+  height: auto;
+  background-color: lightseagreen;
+  border-radius: 5px;
+  margin: auto;
+  color: white;
+  border: none;
+}
+
+/* css for tooltip container */
+.tooltipContainer {
+  display: inline-block;
+  position: relative;
+}
+
+/* css for tooltip */
+.tooltip {
+  position: absolute;
+  border-radius: 4px;
+  padding: 6px;
+  color: white;
+  background: rgb(34, 32, 32);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.tooltip.top {
+  top: -40px;
+}
+
+.tooltip.right {
+  left: 110%;
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+.tooltip.bottom {
+  bottom: -40px;
+}
+
+.tooltip.left {
+  left: auto;
+  right: 110%;
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+/* css for small triangle on tooltip */
+.tooltip::before {
+  content: " ";
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+.tooltip.top::before {
+  top: 100%;
+  border-top-color: black;
+}
+
+.tooltip.right::before {
+  left: -6px;
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-right-color: black;
+}
+
+.tooltip.bottom::before {
+  bottom: 100%;
+  border-bottom-color: black;
+}
+
+.tooltip.left::before {
+  left: auto;
+  right: -12px;
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-left-color: black;
 }
